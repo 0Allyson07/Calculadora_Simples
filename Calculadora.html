@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Simples</title>
+    <style>
+        .um{
+            margin-top: 5%;
+            width: 45%;
+        }
+        .dois{
+            width: 45%;
+        }
+        body{
+            text-align: center;
+
+            box-sizing: border-box;
+        }
+        .titulo{
+         color: red;   
+        }
+        .caixa{
+            background: rgb(227, 227, 247);
+            /*border: 1px solid black;*/
+            width: 50%;
+            margin: auto;
+        }
+        .ss{
+            color: red;
+        }
+        #res{
+            padding: 3%;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="titulo" class="titulo">CALCULADORA</h1>
+<div id="caixa" class="caixa">
+   <p> <input class="um" id="um" type="number" placeholder="Digite o primeiro numero desejado!"></p>
+   <p> <input class="dois" id="dois" type="number" placeholder="Digite o segundo numero desejado!"></p>
+       <input type="button" value="SOMAR" id="somar" onclick="somar()"> 
+       <input type="button" value="SUBTRAIR" id="subtrair" onclick="subtrair()">
+       <input type="button" value="DIVIDIR" id="dividir" onclick="dividir()">
+       <input type="button" value="MULTIPLICAR" id="multiplicar" onclick="multiplicar()"> 
+       <p id="res" >Resultado</p>
+</div>
+
+    <script>
+        function somar(){
+         var um = window.document.getElementById('um');
+         var dois = window.document.getElementById('dois');
+         var res = window.document.getElementById('res');
+         var um = Number(um.value);
+         var dois = Number(dois.value);
+         var s = um + dois;
+         res.innerHTML = `A soma entre ${um} e ${dois} é <strong class="ss">${s}</strong> `;
+        }
+
+        function subtrair(){
+         var um = window.document.getElementById('um');
+         var dois = window.document.getElementById('dois');
+         var res = window.document.getElementById('res');
+         var um = Number(um.value);
+         var dois = Number (dois.value);
+         var s = um - dois;
+         res.innerHTML =`A subtração entre ${um} e ${dois} é <strong class="ss"> ${s} </strong>`;
+        }
+
+        function dividir(){
+            var um = window.document.getElementById('um');
+            var dois = window.document.getElementById('dois');
+            var res = window.document.getElementById ('res');
+            var um = Number(um.value);
+            var dois = Number(dois.value);
+            var d = um / dois;
+            res.innerHTML = `A divisão entre ${um} e ${dois} é <strong class="ss">${d}</strong>`;
+
+        }
+
+        function multiplicar(){
+            var um = window.document.getElementById('um');
+            var dois = window.document.getElementById('dois');
+            var res = window.document.getElementById('res');
+            var  um = Number(um.value);
+            var dois = Number(dois.value);
+            var m = um * dois;
+            res.innerHTML = ` A multiplicação entre ${um} e ${dois} é <strong class="ss">${m}</strong>`
+        }
+    </script>
+</body>
+</html>
